@@ -35,5 +35,8 @@
     "url": "git://github.com/jimmy/sails-hw.git"
   },
   "author": "jimmy",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "grunt-contrib-jshint": "^1.1.0"
+  }
 }
