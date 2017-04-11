@@ -1,3 +1,2 @@
 # sails-hw
-
-a [Sails](http://sailsjs.org) application
+Following Sails JS Essentials to complete and feel the example
