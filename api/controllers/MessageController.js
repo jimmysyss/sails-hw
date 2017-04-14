@@ -6,6 +6,12 @@
  */
 
 module.exports = {
-	
+	hi: function(req, res) {
+        return res.send('HELLO WORLD');
+    },
+
+    bye: function(req, res) {
+        return res.redirect('http://www.yahoo.com.hk');
+    }
 };
 

@@ -8,7 +8,18 @@
 module.exports = {
 
   attributes: {
-
+    email: {
+      type: 'string'
+    },
+    message: {
+      type: 'string'
+    },
+    createdAt:{
+      type: 'datetime'
+    },
+    updatedAt:{
+      type: 'datetime'
+    }
   }
 };
 
