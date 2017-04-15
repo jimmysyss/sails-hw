@@ -96,3 +96,5 @@ Others
 ##############
 #sails-js project, no local config
 config/local.js
+.tmp
+.idea
