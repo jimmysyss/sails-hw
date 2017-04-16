@@ -34,9 +34,22 @@ socketApp.controller('ChatController', ['$http', '$log', '$scope',
     $scope.sendMsg = function () {
       $log.info($scope.chatMessage);
 // Calling the socket API with POST request to add new message in database.
-      io.socket.post('/chat/', {
-        user: $scope.chatUser, message: $scope.chatMessage
+      $http.get("/csrfToken").then(function(resp) {
+        /*io.socket.post('/chat/', {
+          user: $scope.chatUser, message: $scope.chatMessage
+        });
+        $scope.chatMessage = "";*/
+        io.socket.request({
+          method: 'post',
+          url: '/chat/',
+          data: {
+            user: $scope.chatUser,
+            message: $scope.chatMessage
+          },
+          headers: {
+            "X-CSRF-Token": resp.data["_csrf"]
+          }
+        }, function(response) {});
       });
-      $scope.chatMessage = "";
     };
   }]);

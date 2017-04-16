@@ -39,20 +39,25 @@ todoApp.service('TodoService', function ($http, $q) {
     'addTodo': function (todo) {
       console.log(todo);
       var defer = $q.defer();
-      $http.post('/todo', todo).then(function (resp) {
-        defer.resolve(resp);
-      }, function (err) {
-        defer.reject(err);
-      });
+      $http.get("/csrfToken").then(function(resp) {
+        $http.post('/todo', todo, {headers:{"X-CSRF-Token": resp.data["_csrf"]}}).then(function (resp) {
+          defer.resolve(resp);
+        }, function (err) {
+          defer.reject(err);
+        });
+      })
+
       return defer.promise;
     },
     'removeTodo': function (todo) {
       console.log(todo);
       var defer = $q.defer();
-      $http.delete('/todo/' + todo.id, todo).then(function (resp) {
-        defer.resolve(resp);
-      }, function (err) {
-        defer.reject(err);
+      $http.get("/csrfToken").then(function(resp) {
+        $http.delete('/todo/' + todo.id, todo, {headers:{"X-CSRF-Token": resp.data["_csrf"]}}).then(function (resp) {
+          defer.resolve(resp);
+        }, function (err) {
+          defer.reject(err);
+        });
       });
       return defer.promise;
     }
