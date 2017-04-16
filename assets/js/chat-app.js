@@ -12,8 +12,8 @@ socketApp.controller('ChatController', ['$http', '$log', '$scope',
     $scope.getAllMessages = function () {
       io.socket.get('/chat/');
       $http.get($scope.baseUrl + '/chat/')
-        .success(function (success_data) {
-          $scope.chatList = success_data;
+        .then(function (success_data) {
+          $scope.chatList = success_data.data;
           $log.info(success_data);
         });
     };

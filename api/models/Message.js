@@ -13,12 +13,6 @@ module.exports = {
     },
     message: {
       type: 'string'
-    },
-    createdAt:{
-      type: 'datetime'
-    },
-    updatedAt:{
-      type: 'datetime'
     }
   }
 };

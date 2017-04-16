@@ -15,12 +15,6 @@ module.exports = {
     message: {
       type: 'string',
       required: true
-    },
-    createdAt:{
-      type: 'datetime'
-    },
-    updatedAt:{
-      type: 'datetime'
     }
   }
 };
