@@ -10,6 +10,21 @@
  * http://sailsjs.org/#!/documentation/concepts/Logging
  */
 
+// Customize the Logger to use Winstons
+var winston = require('winston');
+var customLogger = new winston.Logger();
+
+customLogger.add(winston.transports.Console, {
+  colorize: true,
+  level: 'debug'
+});
+
+customLogger.add(winston.transports.File, {
+  filename: 'sails-hw.log',
+  level: 'debug',
+  json: false
+});
+
 module.exports.log = {
 
   /***************************************************************************
@@ -23,7 +38,7 @@ module.exports.log = {
   * You may also set the level to "silent" to suppress all logs.             *
   *                                                                          *
   ***************************************************************************/
-
-  // level: 'info'
+  custom: customLogger,
+  //level: 'info'
 
 };
