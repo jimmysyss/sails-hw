@@ -1,0 +1,20 @@
+language: node_js
+
+node_js:
+  - "4.0"
+  - "4.1"
+  - "4.2"
+  - "5.0"
+
+services:
+  - mysql
+
+before_script:
+
+notifications:
+  email: true
+
+# whitelisted branches
+branches:
+  only:
+    - master
