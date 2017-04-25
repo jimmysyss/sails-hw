@@ -25,10 +25,6 @@
     "sails-mongo": "^0.12.2",
     "sails-mysql": "^0.11.5",
     "socket.io": "^1.7.3",
-    "waterlock": "^0.1.2-rc1",
-    "waterlock-facebook-auth": "^0.1.2-rc1",
-    "waterlock-google-auth": "^0.1.2-rc1",
-    "waterlock-local-auth": "^0.1.2-rc1",
     "winston": "^2.3.1"
   },
   "scripts": {
