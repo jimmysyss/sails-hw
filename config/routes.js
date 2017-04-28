@@ -34,7 +34,7 @@ module.exports.routes = {
 
   '/homepage': {
     view: 'homepage'
-  }
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -45,5 +45,8 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+
+  'GET /chat/authorise': {blueprint: 'authorise'},
+  'GET /chat/reject': {blueprint: 'reject'}
 
 };
