@@ -25,8 +25,9 @@ module.exports.policies = {
   * access)                                                                  *
   *                                                                          *
   ***************************************************************************/
-
-  // '*': true,
+  'AuthController': true,
+  //'UserController': true,
+  '*': 'isAuthenticated',
 
   /***************************************************************************
   *                                                                          *
@@ -48,4 +49,8 @@ module.exports.policies = {
 		// before letting any users feed our rabbits
 		// feed : ['isNiceToAnimals', 'hasRabbitFood']
 	// }
+  /*'PostController': {
+    '*': 'isAuthenticated'
+  },*/
+
 };
