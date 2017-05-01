@@ -1,6 +1,10 @@
 var passport = require('passport'),
   LocalStrategy = require('passport-local').Strategy,
+  FacebookStrategy = require('passport-facebook').Strategy,
   bcrypt = require('bcrypt');
+
+//var FACEBOOK_APP_ID = 'FACEBOOK_APP_ID';
+//var FACEBOOK_APP_SECRET = 'FACEBOOK_APP_SECRET';
 
 passport.serializeUser(function (user, done) {
   done(null, user.id);
@@ -12,7 +16,7 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
-passport.use(new LocalStrategy({
+/*passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
   },
@@ -42,4 +46,18 @@ passport.use(new LocalStrategy({
       });
     });
   }
+));*/
+
+passport.use(new FacebookStrategy({
+    clientID: FACEBOOK_APP_ID,
+    clientSecret: FACEBOOK_APP_SECRET,
+    callbackURL: "http://localhost:1337/auth/facebook/callback"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
 ));
+
+module.exports.passport = passport;

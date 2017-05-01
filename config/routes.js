@@ -54,6 +54,9 @@ module.exports.routes = {
   'post /login': 'AuthController.login',
   'get /signup': { view: 'user/signup' },
   '/welcome': { view: 'user/welcome' },
-  '/logout': 'AuthController.logout'
+  '/logout': 'AuthController.logout',
 
+  // Passport facebook authentication
+  'get /auth/facebook': 'AuthController.fbLogin',
+  'get /auth/facebook/callback': 'AuthController.fbLoginCb'
 };
