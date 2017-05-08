@@ -20,6 +20,7 @@
     "grunt-sails-linker": "~0.10.1",
     "grunt-sync": "0.5.2",
     "include-all": "^1.0.0",
+    "mysql": "^2.13.0",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0",
@@ -28,6 +29,7 @@
     "sails-disk": "~0.10.9",
     "sails-mongo": "^0.12.2",
     "sails-mysql": "^0.11.5",
+    "sequelize": "^3.30.4",
     "socket.io": "^1.7.3",
     "winston": "^2.3.1"
   },

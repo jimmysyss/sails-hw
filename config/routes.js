@@ -46,8 +46,8 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'GET /chat/authorise': {blueprint: 'authorise'},
-  'GET /chat/reject': {blueprint: 'reject'},
+  // 'GET /chat/authorise': {blueprint: 'authorise'},
+  // 'GET /chat/reject': {blueprint: 'reject'},
 
   // Passport Test
   'get /login': { view: 'user/login' },

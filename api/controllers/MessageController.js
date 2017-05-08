@@ -4,6 +4,7 @@
  * @description :: Server-side logic for managing Messages
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
+const TodoService = require('../services/TodoService');
 
 module.exports = {
   hi: function (req, res) {
@@ -27,6 +28,10 @@ module.exports = {
   status: function(req, res) {
     var name = req.param('name');
     var message = req.param('message');
+    // TodoService.read('1234');
+    var todoService = new TodoService();
+    todoService.read('1234');
+
     Message.create({email: name, message: message}).exec(function(err, rows) {
       if (err) {
         sails.log(err)
