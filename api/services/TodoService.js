@@ -1,5 +1,5 @@
-const sequelize = require('./Sequelize');
-const Todo = require('../entity/Todo');
+const entity = require('../entity');
+//const Todo = require('../entity/Todo');
 
 /*export default class TodoService {
     constructor() {
@@ -17,7 +17,7 @@ var TodoService = function() {
 }
 
 TodoService.prototype.read = function(id) {
-    return Todo.findOne().then(function (user) {
+    return entity.Todo.findOne().then(function (user) {
         console.log(user.get('value'));
     });
 }
