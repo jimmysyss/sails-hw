@@ -51,7 +51,7 @@
     "grunt-contrib-jshint": "^1.1.0",
     "mocha": "^2.3.4",
     "sails-memory": "^0.10.5",
-    "sails-webpack": "^1.0.13",
+    "c": "^1.0.13",
     "should": "^7.1.1",
     "supertest": "^1.1.0"
   }
