@@ -46,12 +46,14 @@
   "author": "jimmy",
   "license": "",
   "devDependencies": {
-    "grunt-contrib-jshint": "^1.1.0",
     "barrels": "^1.6.2",
     "freeport": "^1.0.5",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-webpack": "^3.0.0",
     "mocha": "^2.3.4",
     "sails-memory": "^0.10.5",
     "should": "^7.1.1",
-    "supertest": "^1.1.0"
+    "supertest": "^1.1.0",
+    "webpack": "^2.5.1"
   }
 }
