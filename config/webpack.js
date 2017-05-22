@@ -5,7 +5,7 @@ var path = require('path');
 
 // compile js assets into a single bundle file
 module.exports.webpack = {
-  options: {
+  config: {
     devtool: 'eval',
     entry: [
       './assets/js',
