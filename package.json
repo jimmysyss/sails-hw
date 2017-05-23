@@ -25,6 +25,8 @@
     "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0",
     "rc": "1.0.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "sails": "~0.12.13",
     "sails-disk": "~0.10.9",
     "sails-hook-webpack": "^2.0.4",
@@ -32,8 +34,6 @@
     "sails-mysql": "^0.11.5",
     "sequelize": "^3.30.4",
     "socket.io": "^1.7.3",
-    "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5",
     "winston": "^2.3.1"
   },
   "scripts": {
@@ -57,9 +57,12 @@
     "c": "^0.1.0",
     "freeport": "^1.0.5",
     "grunt-contrib-jshint": "^1.1.0",
+    "html-webpack-plugin": "^2.28.0",
     "mocha": "^2.3.4",
     "sails-memory": "^0.10.5",
     "should": "^7.1.1",
-    "supertest": "^1.1.0"
+    "supertest": "^1.1.0",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
   }
 }

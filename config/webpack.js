@@ -1,28 +1,38 @@
 // config/webpack.js
 
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
+
+var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: 'assets/index.html',
+  filename: 'index.html',
+  inject: 'body'
+})
 
 // compile js assets into a single bundle file
 module.exports.webpack = {
   config: {
     devtool: 'eval',
     entry: [
-      './assets/js',
+      path.resolve(__dirname, '../assets/js/index.js')
     ],
     output: {
-      path: path.resolve(__dirname, '.tmp/public/js'),
+      path: path.resolve(__dirname, '../.tmp/public'),
       filename: 'bundle.js'
     },
     plugins: [
+      HtmlWebpackPluginConfig,
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin()
     ],
     module: {
       loaders: [
         // requires "npm install --save-dev babel-loader"
-        { test: /\.js$/, loaders: ['babel-loader?stage=0'] },
-        { test: /\.css$/, loader: 'style!css' }
+        // { test: /\.js$/, loaders: ['babel-loader?stage=0'] },
+        // { test: /\.css$/, loader: 'style!css' }
+        { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+        { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ }
       ]
     }
   },
