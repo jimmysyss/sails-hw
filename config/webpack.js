@@ -2,6 +2,7 @@
 
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
 
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -22,6 +23,7 @@ module.exports.webpack = {
       filename: 'bundle.js'
     },
     plugins: [
+      new CopyWebpackPlugin([{ from: 'assets/docs', to: 'docs'}]),
       HtmlWebpackPluginConfig,
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin()
